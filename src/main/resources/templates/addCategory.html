@@ -26,11 +26,16 @@
         </ul>
     </div>
 </nav>
-<form action="#" th:action="@{/addCategory}" th:object="${category}" method="post">
-    <input type="hidden" th:field="*{id}"/>
-    New Category Name: <input type="text" th:field="*{name}"/> <br/>
-    <input type="submit" value="Submit" class="btn active" role="button" aria-pressed="true"/>
-</form>
+<div class="container">
+    <form action="#" th:action="@{/addCategory}" th:object="${category}" method="post">
+        <input type="hidden" th:field="*{id}"/>
+        <div class="form-group">
+            <label for="new-category">New Category Name</label>
+            <input type="text" class="form-control" id="new-category" th:field="*{name}"/>
+        </div>
+        <input type="submit" value="Submit" class="btn active" role="button" aria-pressed="true"/>
+    </form>
+</div>
 
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

@@ -26,22 +26,36 @@
         </ul>
     </div>
 </nav>
-<form action="#" th:action="@{/addCar}" th:object="${car}" method="post">
-    <input type="hidden" th:field="*{id}"/>
-    Year: <input type="text" th:field="*{year}"/> <br/>
-    Make: <input type="text" th:field="*{make}"/> <br/>
-    Model: <input type="text" th:field="*{model}"/> <br/>
-    MSRP: <input type="number" th:field="*{msrp}"/> <br/>
-    <label>Categories:
-        <input type="checkbox" name="categories"
-               th:each="category : ${categories}"
-               th:text="${category.name}"
-               th:value="${category.id}"
-               th:field="*{categories}"/>
-    </label> <br/>
+<div class="container">
+    <form action="#" th:action="@{/addCar}" th:object="${car}" method="post">
+        <input type="hidden" th:field="*{id}"/>
+        <div class="form-group">
+            <label for="car-year">Year:</label>
+            <input type="text" id="car-year" class="form-control" th:field="*{year}"/>
+        </div>
+        <div>
+            <label for="car-make">Make:</label>
+            <input type="text" id="car-make" class="form-control" th:field="*{make}"/>
+        </div>
+        <div>
+            <label for="car-model">Model:</label>
+            <input type="text" id="car-model" class="form-control" th:field="*{model}"/>
+        </div>
+        <div>
+            <label for="car-msrp">MSRP:</label>
+            <input type="number" id="car-msrp" class="form-control" th:field="*{msrp}"/>
+        </div>
+        Categories:
+        <div class="form-group form-check" th:each="category : ${categories}">
+            <input type="checkbox" class="form-check-input" id="${category.id}" th:field="*{categories}"
+                   th:value="${category.id}">
+            <label class="form-check-label" for="${category.id}">[[${category.name}]]</label>
+        </div>
 
-    <input type="submit" value="Submit" class="btn active" role="button" aria-pressed="true"/>
-</form>
+
+        <input type="submit" value="Submit" class="btn active" role="button" aria-pressed="true"/>
+    </form>
+</div>
 
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
