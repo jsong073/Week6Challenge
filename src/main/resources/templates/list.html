@@ -20,20 +20,20 @@
             <li class="nav-item active">
                 <a class="nav-link" th:href="@{/addCar}">Add A Car <span class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item active">
                 <a class="nav-link" th:href="@{/addCategory}">Add a Category</a>
             </li>
         </ul>
     </div>
 </nav>
 <h2>List of Cars</h2>
-<table>
+<table class="table">
     Categories:
     <tr th:each="category : ${categories}">
         [[${category.name}]]
     </tr>
 </table>
-<table>
+<table class="table">
     <tr>
         <th>Year</th>
         <th>Make</th>
@@ -52,8 +52,10 @@
                 [[${category.name}]] <br/>
             </span>
         </td>
-        <td><a th:href="@{/update/{id}(id=${car.id})}">Update</a></td>
-        <td><a th:href="@{/delete/{id}(id=${car.id})}">Delete</a></td>
+        <td>
+            <a th:href="@{/update/{id}(id=${car.id})}" class="btn active" role="button" aria-pressed="true">Update</a>
+            <a th:href="@{/delete/{id}(id=${car.id})}" class="btn active" role="button" aria-pressed="true">Delete</a>
+        </td>
 
 
     </tr>

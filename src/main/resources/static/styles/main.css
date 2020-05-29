@@ -1,3 +1,8 @@
 nav {
     background-color: mediumpurple !important;
 }
+
+.btn {
+    background-color: mediumpurple !important;
+    color: white !important;
+}

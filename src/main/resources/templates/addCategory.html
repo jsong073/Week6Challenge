@@ -20,7 +20,7 @@
             <li class="nav-item active">
                 <a class="nav-link" th:href="@{/addCar}">Add A Car <span class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item active">
                 <a class="nav-link" th:href="@{/addCategory}">Add a Category</a>
             </li>
         </ul>
@@ -29,7 +29,7 @@
 <form action="#" th:action="@{/addCategory}" th:object="${category}" method="post">
     <input type="hidden" th:field="*{id}"/>
     New Category Name: <input type="text" th:field="*{name}"/> <br/>
-    <input type="submit" value="Submit"/>
+    <input type="submit" value="Submit" class="btn active" role="button" aria-pressed="true"/>
 </form>
 
 
